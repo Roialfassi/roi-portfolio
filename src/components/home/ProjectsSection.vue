@@ -26,7 +26,7 @@
             id: 1,
             title: 'PromptQueueRunner',
             description: 'This Python script allows you to query a locally hosted Large Language Model (LLM) with multiple prompts and save the responses to text files. It provides a command-line interface for easy usage and configuration.',
-            image: '/src/assets/images/PromptQueueRunner.webp',
+            image: 'assets/images/PromptQueueRunner.webp',
             demoLink: 'https://github.com/Roialfassi/PromptQueueRunner',
             sourceLink: 'https://github.com/Roialfassi/PromptQueueRunner'
           },
@@ -34,7 +34,7 @@
             id: 2,
             title: 'Stock Comparator',
             description: ' Stock Performance Comparison is a Streamlit application that allows users to compare the historical performance of two stock tickers, including stocks, ETFs, or index funds.',
-            image: '/src/assets/images/stock_comparator.webp',
+            image: 'assets/images/stock_comparator.webp',
             demoLink: 'https://stock-comparator.streamlit.app/',
             sourceLink: 'https://github.com/Roialfassi/Stock_Comparator'
           },
@@ -42,7 +42,7 @@
             id: 3,
             title: 'World Temperature over time Dashboard',
             description: 'A World Temperature visualization dashboard that shows temperature changes over time based on Kaggle dataset',
-            image: '/src/assets/images/WorldTemp.webp',
+            image: 'assets/images/WorldTemp.webp',
             demoLink: 'https://roialfassi.github.io/ViZ_Project/',
             sourceLink: 'https://github.com/Roialfassi/ViZ_Project'
           }
