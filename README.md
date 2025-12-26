@@ -1,161 +1,116 @@
-# Professional Portfolio Website
+# Roi Alfassi - AI Engineer Portfolio
 
-A modern, responsive portfolio website built with Vue.js and Tailwind CSS. This single-page application showcases professional experience, projects, and skills with a clean, minimalist design.
+A professional portfolio website showcasing AI/ML projects, published applications, and research. Built with vanilla HTML/CSS/JavaScript for maximum simplicity and customization.
 
-## Features
+🌐 **Live Site**: [roialfassi.github.io/roi-portfolio](https://roialfassi.github.io/roi-portfolio)
 
-- 📱 Fully responsive design
-- 🎯 Smooth scroll navigation
-- 💫 Interactive UI elements
-- 🌓 Section highlighting based on scroll position
-- 📊 Dynamic content loading
-- 🎨 Modern and clean UI design
-- 🔍 SEO-friendly structure
+## ✨ Features
 
-## Tech Stack
+- **Microsoft-Inspired Design** - Professional dark theme with clean blues
+- **AI Engineer Focus** - Highlights ML, NLP, and data expertise
+- **Downloadable Apps** - Direct APK/EXE downloads for IPTV apps
+- **Live Project Demos** - Interactive data visualizations
+- **Research Publications** - Academic work on display
+- **Hire Me CTA** - Optimized for attracting opportunities
+- **Fully Responsive** - Perfect on desktop, tablet, and mobile
 
-- Vue.js 3
-- Tailwind CSS
-- Vue Router
-- JavaScript (ES6+)
-- HTML5
-- CSS3
+## 🚀 Quick Start
 
-## Project Structure
-
-```
-Directory structure:
-└── roialfassi-roi-portfolio/
-    ├── README.md
-    ├── LICENSE
-    ├── index.html
-    ├── jsconfig.json
-    ├── package.json
-    ├── postcss.config.js
-    ├── tailwind.config.js
-    ├── vite.config.js
-    ├── public/
-    └── src/
-        ├── App.vue
-        ├── main.js
-        ├── assets/
-        │   ├── base.css
-        │   ├── main.css
-        │   └── images/
-        │       ├── PromptQueueRunner.webp
-        │       ├── WorldTemp.webp
-        │       └── stock_comparator.webp
-        ├── components/
-        │   ├── home/
-        │   │   ├── AboutSection.vue
-        │   │   ├── ContactSection.vue
-        │   │   ├── EducationSection.vue
-        │   │   ├── ExperienceSection.vue
-        │   │   ├── HeroSection.vue
-        │   │   └── ProjectsSection.vue
-        │   ├── icons/
-        │   │   ├── IconCommunity.vue
-        │   │   ├── IconDocumentation.vue
-        │   │   ├── IconEcosystem.vue
-        │   │   ├── IconSupport.vue
-        │   │   └── IconTooling.vue
-        │   ├── layout/
-        │   │   ├── TheFooter.vue
-        │   │   ├── TheHeader.vue
-        │   │   └── TheNavigation.vue
-        │   └── ui/
-        │       ├── ProjectCard.vue
-        │       ├── SkillTag.vue
-        │       └── SocialLink.vue
-        ├── router/
-        │   └── index.js
-        └── views/
-            └── HomeView.vue
-
-```
-
-## Prerequisites
-
-- Node.js (v14.0 or higher)
-- npm or yarn package manager
-
-## Installation
-
-1. Clone the repository:
 ```bash
-git clone https://github.com/Roialfassi/roi-portfolio.git
-cd roi-portfolio
+# Run locally
+npx serve .
+
+# Opens at http://localhost:3000
 ```
 
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
+## 📂 Project Structure
+
+```
+roi-portfolio/
+├── index.html          # Main HTML structure
+├── styles.css          # Microsoft-inspired styling
+├── app.js              # Dynamic rendering logic
+├── data.js             # ⭐ YOUR CONTENT (edit this!)
+├── assets/
+│   └── images/         # Project screenshots
+└── Resources/          # Downloadable files
+    ├── CV.pdf
+    ├── *.apk           # Android apps
+    └── *.exe           # Desktop app
 ```
 
-3. Start the development server:
-```bash
-npm run dev
-# or
-yarn dev
+## 📝 Customize Content
+
+Edit **`data.js`** to update your portfolio:
+
+### Personal Info
+```javascript
+personal: {
+    name: "Your Name",
+    title: "Your Title",
+    email: "your@email.com",
+    // ...
+}
 ```
 
-4. Build for production:
-```bash
-npm run build
-# or
-yarn build
+### Add/Edit Projects
+```javascript
+featuredWork: [
+    {
+        id: "project-id",
+        type: "project",  // or "app" for downloadables
+        title: "Project Name",
+        description: "What it does...",
+        image: "assets/images/screenshot.png",
+        tags: ["Tech1", "Tech2"],
+        liveUrl: "https://...",
+        githubUrl: "https://github.com/...",
+        // For apps only:
+        platform: "Android",
+        downloadFile: "Resources/app.apk"
+    }
+]
 ```
 
-## Customization
+### Services
+```javascript
+services: [
+    {
+        title: "AI & Machine Learning",
+        description: "Custom ML models...",
+        icon: "ai"
+    }
+]
+```
 
-### Content
-- Update personal information in respective component files
-- Modify section content in the `sections` directory
-- Add or remove sections as needed in `App.vue`
+## 🎨 Customizing Design
 
-### Styling
-- Customize colors in `tailwind.config.js`
-- Modify component styles within individual `.vue` files
-- Add new CSS classes in `assets/css`
+### Colors (in styles.css)
+```css
+:root {
+    --color-accent-primary: #0078d4;   /* Microsoft Blue */
+    --color-accent-secondary: #00a4ef; /* Light Blue */
+    --color-accent-tertiary: #50e6ff;  /* Cyan */
+}
+```
 
-### Navigation
-- Update navigation items in `TheHeader.vue`
-- Modify scroll behavior in navigation methods
-- Adjust mobile menu breakpoints
+## 📱 Screenshots Required
 
-## Deployment
+When adding projects, include screenshots in `assets/images/`:
+- Recommended size: 800×500px for projects
+- Format: PNG, JPG, or WebP
 
-The site can be deployed to various hosting platforms:
+## 🌐 Deploy to GitHub Pages
 
-1. Static hosting (Netlify, Vercel, GitHub Pages)
-2. Traditional web hosting
-3. Cloud platforms (AWS, Google Cloud, Azure)
+1. Push to GitHub
+2. Go to Settings → Pages
+3. Set Source: "main" branch, root folder
+4. Your site goes live at `https://username.github.io/repo-name/`
 
-## Browser Support
+## 📄 License
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers
+MIT License - feel free to use for your own portfolio!
 
-## Contributing
+---
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-- Vue.js team for the fantastic framework
-- Tailwind CSS for the utility-first CSS framework
-- All contributors and maintainers
-
+**Built with ❤️ for attracting opportunities**
