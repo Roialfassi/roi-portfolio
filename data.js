@@ -124,7 +124,7 @@ const portfolioData = {
             image: null, // Use logo instead
             icon: "Resources/iptv-logo2.ico",
             platform: "Windows",
-            downloadFile: "Resources/iptv_app.exe",
+            downloadFile: "Resources/iptv_app.zip",
             githubUrl: "https://github.com/Roialfassi/IPTV-Saba",
             liveUrl: null,
             tags: ["Python", "PyQt", "VLC", "Multi-Profile"],
