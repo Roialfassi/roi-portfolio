@@ -110,7 +110,9 @@ function populateFeaturedWork() {
                         </div>
                     </div>
                     <div class="app-actions">
-                        <a href="${item.downloadFile}" download class="btn btn-download">
+                        ${/^https?:\/\//i.test(item.downloadFile)
+                            ? `<a href="${item.downloadFile}" target="_blank" rel="noopener noreferrer" class="btn btn-download">`
+                            : `<a href="${item.downloadFile}" download class="btn btn-download">`}
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                             <span>Download</span>
                         </a>
