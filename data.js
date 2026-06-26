@@ -183,6 +183,34 @@ const portfolioData = {
             liveUrl: "https://roialfassi.github.io/weight-loss-calculator/",
             tags: ["React", "JavaScript", "Health"],
             featured: true
+        },
+        {
+            id: "buying-vs-renting",
+            type: "project",
+            title: "Buying vs. Renting Calculator",
+            description: "Financial decision tool comparing buying vs. renting a home over time — modeling opportunity cost and investment returns, not just monthly payments. Break-even analysis, regional presets, and shareable scenario URLs.",
+            image: null,
+            icon: null,
+            platform: null,
+            downloadFile: null,
+            githubUrl: "https://github.com/Roialfassi/BuyingVsRenting",
+            liveUrl: "https://roialfassi.github.io/BuyingVsRenting/",
+            tags: ["TypeScript", "Vite", "Fluent UI", "Finance"],
+            featured: true
+        },
+        {
+            id: "personal-finances",
+            type: "project",
+            title: "Salary Budget Splitter",
+            description: "Local-first budgeting app that turns take-home pay into a practical monthly budget. Multiple pay frequencies, budget templates (50/30/20, Ramsey, savings/debt-focused), one-click balancing, and CSV/JSON export — fully browser-based, no backend.",
+            image: null,
+            icon: null,
+            platform: null,
+            downloadFile: null,
+            githubUrl: "https://github.com/Roialfassi/PersonalFinances",
+            liveUrl: "https://roialfassi.github.io/PersonalFinances/",
+            tags: ["React", "TypeScript", "Vite", "Finance"],
+            featured: true
         }
     ],
 
