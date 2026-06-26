@@ -12,14 +12,14 @@ const portfolioData = {
     personal: {
         name: "Roi Alfassi",
         title: "AI Engineer",
-        tagline: "Building Intelligent Systems",
-        description: "AI Engineer with expertise in NLP, LLMs, and production ML systems. M.Sc. in Information Systems with published research on AI-generated content. I build end-to-end solutions from data pipelines to user-facing applications.",
+        tagline: "Shipping Production GenAI Systems",
+        description: "Production AI/GenAI Engineer building tool-calling assistants, RAG pipelines, and predictive ML in Python. I own the AI and data architecture at AIO Systems, shipping production-grade solutions across a platform spanning 110,500+ IoT deployments. M.Sc. in Information Systems with three first-author publications and a University of Haifa Research Excellence Award.",
         email: "roialfassi@gmail.com",
         github: "https://github.com/Roialfassi",
         linkedin: "https://www.linkedin.com/in/roi-alfassi/",
-        location: "Israel",
+        location: "Haifa, Israel",
         available: false, // No badge
-        cvFile: "Resources/CV-Roi Alfassi-110825.pdf"
+        cvFile: "Resources/Roi_Alfassi_2026.pdf"
     },
 
     // ==========================================
@@ -27,13 +27,13 @@ const portfolioData = {
     // ==========================================
     services: [
         {
-            title: "AI & Machine Learning",
-            description: "Production-ready LLM integrations, NLP pipelines, predictive models, and intelligent automation. From prototype to deployment.",
+            title: "GenAI & Machine Learning",
+            description: "Production GenAI systems — tool-calling assistants, RAG pipelines, and agents (MCP) — plus predictive ML and intelligent automation. From prototype to deployment.",
             icon: "ai"
         },
         {
             title: "Data Engineering",
-            description: "ETL pipelines, data validation systems, AWS infrastructure (EC2, S3), and large-scale data processing for analytics and ML.",
+            description: "ETL/ELT pipelines, data warehouse design, and large-scale processing (~1B rows across 10+ sources). Cloud infrastructure on Azure and AWS for analytics and ML.",
             icon: "data"
         },
         {
@@ -43,7 +43,7 @@ const portfolioData = {
         },
         {
             title: "Research & Analysis",
-            description: "Academic research background with multiple published papers. Data-driven insights, KPI extraction, and technical documentation.",
+            description: "Academic background with three first-author publications, including IJHCI (Taylor & Francis). Data-driven insights, LLM evaluation, and technical documentation.",
             icon: "research"
         }
     ],
@@ -53,8 +53,8 @@ const portfolioData = {
     // ==========================================
     about: {
         paragraphs: [
-            "I'm an AI Engineer at AIO Systems, where I develop and integrate LLM-powered features into production systems. My work spans custom chat interfaces, predictive models, and extracting actionable business insights from complex data.",
-            "With an M.Sc. in Information Systems from the University of Haifa (GPA 90, Thesis 95) and research published at IUI 2025, NetsciX 2025, and Taylor & Francis, I bring both practical engineering skills and academic rigor to every project."
+            "I'm an AI Engineer at AIO Systems, where I own the AI and data architecture end-to-end. I re-architected the production AI chat assistant on the OpenAI Responses API with tool-calling, MCP, and RAG over multi-source company data, and shipped page-level AI assistants across a CMS serving 110,500+ IoT deployments for global telecom operators.",
+            "I also own the company data warehouse and ETL pipelines (~1B rows across 10+ sources) and deployed an XGBoost forecasting model running in production. I hold an M.Sc. in Information Systems from the University of Haifa (GPA 90, Thesis 95) with three first-author publications — including the International Journal of Human–Computer Interaction (Taylor & Francis) — and am the sole recipient of the University of Haifa Research Excellence Award, 2025."
         ]
     },
 
@@ -62,25 +62,22 @@ const portfolioData = {
     // SKILLS / TECH STACK
     // ==========================================
     skills: [
-        // AI & ML
+        // GenAI & ML
         { name: "Python", icon: "python", category: "core" },
-        { name: "NLP", icon: "nlp", category: "core" },
-        { name: "LLMs", icon: "llm", category: "core" },
+        { name: "LLMs & GenAI", icon: "llm", category: "core" },
+        { name: "RAG & Agents", icon: "ai", category: "core" },
         { name: "Machine Learning", icon: "ai", category: "core" },
-        { name: "Deep Learning", icon: "ai", category: "core" },
+        { name: "NLP", icon: "nlp", category: "core" },
+        // Data & Cloud
+        { name: "SQL", icon: "sql", category: "data" },
+        { name: "Pandas", icon: "pandas", category: "data" },
+        { name: "Azure", icon: "cloud", category: "data" },
+        { name: "AWS", icon: "aws", category: "data" },
+        { name: "Docker", icon: "docker", category: "data" },
         // Development
         { name: "Kotlin", icon: "kotlin", category: "dev" },
         { name: "JavaScript", icon: "javascript", category: "dev" },
-        { name: "Vue.js", icon: "javascript", category: "dev" },
-        { name: "Jetpack Compose", icon: "compose", category: "dev" },
-        // Data
-        { name: "AWS", icon: "aws", category: "data" },
-        { name: "SQL", icon: "sql", category: "data" },
-        { name: "Pandas", icon: "pandas", category: "data" },
-        { name: "D3.js", icon: "d3", category: "data" },
-        // Tools
-        { name: "Git", icon: "git", category: "tools" },
-        { name: "Docker", icon: "docker", category: "tools" }
+        { name: "Git", icon: "git", category: "tools" }
     ],
 
     // ==========================================
@@ -96,7 +93,7 @@ const portfolioData = {
             image: null, // Use logo instead
             icon: "Resources/app_logo.jpg",
             platform: "Android",
-            downloadFile: "Resources/Alfassi-Phone-TV.apk",
+            downloadFile: "https://play.google.com/apps/internaltest/4701693477024329318",
             githubUrl: null,
             liveUrl: null,
             tags: ["Kotlin", "Jetpack Compose", "ExoPlayer", "Chromecast"],
@@ -110,7 +107,7 @@ const portfolioData = {
             image: null, // Use logo instead
             icon: "Resources/app_logo.jpg",
             platform: "Android TV",
-            downloadFile: "Resources/Alfassi-TV.apk",
+            downloadFile: "https://play.google.com/apps/internaltest/4698715405678683216",
             githubUrl: null,
             liveUrl: null,
             tags: ["Kotlin", "Android TV", "Leanback", "Accessibility"],
@@ -196,20 +193,29 @@ const portfolioData = {
         {
             id: "fanfiction-ai",
             title: "Fanfiction in the Age of AI: Community Perspectives on Creativity, Authenticity and Adoption",
-            journal: "Taylor & Francis (Accepted)",
+            journal: "IJHCI · Taylor & Francis",
             year: "2025",
-            description: "Research exploring how creative writing communities perceive AI-generated content. Examines authenticity, creativity, and technology adoption in online storytelling spaces.",
+            description: "First-author study in the International Journal of Human–Computer Interaction (Vol. 42) on how creative writing communities perceive AI-generated content — authenticity, creativity, and technology adoption in online storytelling spaces.",
             url: "https://arxiv.org/abs/2506.18706",
             tags: ["AI", "NLP", "HCI", "Research"]
         },
         {
             id: "hai-gen",
-            title: "Online Storytelling Spaces: Exploring Perceptions of AI Agents",
-            journal: "IUI 2025 HAI-Gen Workshop",
+            title: "Online Storytelling Spaces: Exploring Participants' Perceptions of Overt and Covert AI Agents",
+            journal: "HAI-Gen · ACM IUI 2025",
             year: "2025",
-            description: "Accepted paper examining participants' perceptions of overt and covert AI agents in collaborative storytelling environments.",
+            description: "First-author paper examining participants' perceptions of overt and covert AI agents in collaborative storytelling environments. Presented at the HAI-Gen Workshop, ACM IUI 2025, Cagliari, Italy.",
             url: "https://arxiv.org/abs/2506.18706",
             tags: ["Human-AI Interaction", "IUI 2025"]
+        },
+        {
+            id: "netscix-fanfiction",
+            title: "Identifying Differences Between Human- and AI-Generated Fanfiction Stories",
+            journal: "NetsciX 2025",
+            year: "2025",
+            description: "First-author network-science study quantifying stylistic and structural differences between human- and AI-generated fanfiction, combining embedding analysis, clustering, and classification.",
+            url: "https://arxiv.org/abs/2506.18706",
+            tags: ["AI", "NLP", "Network Science"]
         }
     ],
 

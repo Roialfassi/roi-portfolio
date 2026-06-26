@@ -90,6 +90,16 @@ function populateFeaturedWork() {
 
         if (item.type === 'app') {
             // App card - use icon/logo, no preview image
+            const isPlayStore = /play\.google\.com/i.test(item.downloadFile || '');
+            const isExternal = /^https?:\/\//i.test(item.downloadFile || '');
+            const downloadAttrs = isExternal
+                ? `href="${item.downloadFile}" target="_blank" rel="noopener noreferrer"`
+                : `href="${item.downloadFile}" download`;
+            const downloadIcon = isPlayStore
+                ? `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.39 12l2.308-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z"/></svg>`
+                : `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`;
+            const downloadLabel = isPlayStore ? 'Get on Google Play' : 'Download';
+
             card.innerHTML = `
                 <div class="app-body">
                     <div class="app-header">
@@ -110,11 +120,9 @@ function populateFeaturedWork() {
                         </div>
                     </div>
                     <div class="app-actions">
-                        ${/^https?:\/\//i.test(item.downloadFile)
-                            ? `<a href="${item.downloadFile}" target="_blank" rel="noopener noreferrer" class="btn btn-download">`
-                            : `<a href="${item.downloadFile}" download class="btn btn-download">`}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                            <span>Download</span>
+                        <a ${downloadAttrs} class="btn btn-download">
+                            ${downloadIcon}
+                            <span>${downloadLabel}</span>
                         </a>
                         ${item.githubUrl ? `
                             <a href="${item.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-github">
@@ -202,7 +210,8 @@ function populateSkills() {
         pandas: `<svg viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="2" width="4" height="8" rx="1"/><rect x="4" y="14" width="4" height="8" rx="1"/><rect x="10" y="6" width="4" height="12" rx="1"/><rect x="16" y="2" width="4" height="8" rx="1"/><rect x="16" y="14" width="4" height="8" rx="1"/></svg>`,
         aws: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.296.064-.583.16-.862.272a2.287 2.287 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586z"/></svg>`,
         sql: `<svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
-        docker: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.82 17.275c-.684 0-1.304-.264-1.74-.756-.552-.607-.736-1.483-.52-2.463.02-.092.195-.793.86-1.603.398-.484.94-.924 1.612-1.31a6.323 6.323 0 0 1 1.14-.523c-.148-.18-.28-.37-.398-.565-.552-.913-.654-1.926-.287-2.856.31-.786.91-1.398 1.696-1.727.24-.1.495-.17.76-.21.54-.082 1.09-.04 1.64.124.187.056.37.126.547.21-.18-.43-.27-.9-.27-1.4 0-.97.35-1.87.98-2.54.67-.7 1.57-1.1 2.54-1.14h.14c.97 0 1.87.35 2.54.99.7.67 1.1 1.58 1.14 2.55.04.78-.17 1.52-.56 2.15.62-.25 1.29-.38 2-.38 1.1 0 2.12.38 2.96 1.07.92.75 1.54 1.84 1.7 2.99.02.14.03.28.03.42 0 .34-.04.67-.1 1-.16.76-.5 1.48-.99 2.09-.54.67-1.24 1.2-2.04 1.54-.73.31-1.52.48-2.33.5h-.1c-.95.02-9.36.02-11.93 0z"/></svg>`
+        docker: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.82 17.275c-.684 0-1.304-.264-1.74-.756-.552-.607-.736-1.483-.52-2.463.02-.092.195-.793.86-1.603.398-.484.94-.924 1.612-1.31a6.323 6.323 0 0 1 1.14-.523c-.148-.18-.28-.37-.398-.565-.552-.913-.654-1.926-.287-2.856.31-.786.91-1.398 1.696-1.727.24-.1.495-.17.76-.21.54-.082 1.09-.04 1.64.124.187.056.37.126.547.21-.18-.43-.27-.9-.27-1.4 0-.97.35-1.87.98-2.54.67-.7 1.57-1.1 2.54-1.14h.14c.97 0 1.87.35 2.54.99.7.67 1.1 1.58 1.14 2.55.04.78-.17 1.52-.56 2.15.62-.25 1.29-.38 2-.38 1.1 0 2.12.38 2.96 1.07.92.75 1.54 1.84 1.7 2.99.02.14.03.28.03.42 0 .34-.04.67-.1 1-.16.76-.5 1.48-.99 2.09-.54.67-1.24 1.2-2.04 1.54-.73.31-1.52.48-2.33.5h-.1c-.95.02-9.36.02-11.93 0z"/></svg>`,
+        cloud: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>`
     };
 
     skills.forEach(skill => {
