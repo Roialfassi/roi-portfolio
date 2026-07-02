@@ -626,7 +626,8 @@ ol {
     color: var(--color-text-primary);
     padding: 0.75rem 1.25rem;
     font-size: 0.875rem;
-    flex: 1;
+    flex: 1 1 130px;
+    justify-content: center;
     border: none;
 }
 
@@ -642,6 +643,8 @@ ol {
     color: var(--color-text-primary);
     padding: 0.75rem 1.25rem;
     font-size: 0.875rem;
+    flex: 1 1 95px;
+    justify-content: center;
 }
 
 .btn-github:hover {
@@ -655,6 +658,8 @@ ol {
     color: var(--color-text-primary);
     padding: 0.75rem 1.25rem;
     font-size: 0.875rem;
+    flex: 1 1 95px;
+    justify-content: center;
 }
 
 .btn-release:hover {
@@ -987,6 +992,7 @@ ol {
 
 .app-actions {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-sm);
     margin-top: auto;
 }
